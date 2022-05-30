@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-   void findMaxStation() {
+    void findMaxStation() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(9);
         int actual = radio.getCurrentRadioStation();
@@ -22,8 +22,9 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-   void increaseMaxStation() {
+    void increaseMaxStation() {
         Radio radio = new Radio();
         radio.setNextRadioStation(9);
         int actual = radio.getNextRadioStation();
@@ -31,6 +32,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void prevRadioStation() {
         Radio radio = new Radio();
@@ -40,6 +42,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void increaseRadioStation() {
         Radio radio = new Radio();
@@ -49,6 +52,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void increaseMinRadioStation() {
         Radio radio = new Radio();
@@ -58,6 +62,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void increaseMaxRadioStation() {
         Radio radio = new Radio();
@@ -67,6 +72,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void minCurrentRadioStation() {
         Radio radio = new Radio();
@@ -76,6 +82,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void maxCurrentRadioStation() {
         Radio radio = new Radio();
@@ -85,6 +92,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void increaseVolume() {
         Radio radio = new Radio();
@@ -104,6 +112,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void currentVolume() {
         Radio radio = new Radio();
