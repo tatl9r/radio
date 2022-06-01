@@ -4,6 +4,7 @@ public class Radio {
     private int currentRadioStation;
     private int currentVolume;
 
+
     public int getCurrentRadioStation() {
         return currentRadioStation;
     }
@@ -12,60 +13,51 @@ public class Radio {
         return currentVolume;
     }
 
-    public int getPrevRadioStation() {
-        return currentRadioStation;
-    }
-    public int getNextRadioStation() {
-        return currentRadioStation;
-    }
-    public int getIncreaseVolume() {
-        return currentVolume;
-    }
-    public int getDecreaseVolume() {
-        return currentVolume;
+    public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation < 0) {
+            return;
+        }
+        if (currentRadioStation > 9) {
+            return;
+        }
+        this.currentRadioStation = currentRadioStation;
     }
 
-    public void setNextRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation == 9){
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
             return;
         }
-        this.currentRadioStation = newCurrentRadioStation + 1;
+        if (currentVolume > 10) {
+            return;
+        }
+        this.currentVolume = currentVolume;
     }
 
-    public void setCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation < 0) {
-            return;
+    public void nextRadioStation() {
+        if (currentRadioStation < 9) {
+            int nextRadioStation = currentRadioStation + 1;
+            this.currentRadioStation = nextRadioStation;
         }
-        if (newCurrentRadioStation > 9) {
-            return;
-        }
-        this.currentRadioStation = newCurrentRadioStation;
-    }
-    public void setPrevRadioStation(int newCurrentRadioStation) {
-        if (currentRadioStation == 0){
-            newCurrentRadioStation = 9;
-        }
-        this.currentRadioStation = newCurrentRadioStation - 1;
     }
 
-    public void setIncreaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 10) {
+    public void prevRadioStation() {
+        if (currentRadioStation > 0) {
+            int nextRadioStation = currentRadioStation - 1;
+            this.currentRadioStation = nextRadioStation;
         }
-        this.currentVolume = newCurrentVolume + 1;
-    }
-    public void setDecreaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 0) {
-        }
-        this.currentVolume = newCurrentVolume - 1;
     }
 
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
-            return;
+    public void increaseVolume() {
+        if (currentVolume < 10) {
+          int increaseVolume = currentVolume + 1;
+            this.currentVolume = increaseVolume;
         }
-        if (newCurrentVolume > 10) {
-            return;
+    }
+
+    public void decreaseVolume() {
+        if (currentVolume > 0) {
+          int decreaseVolume = currentVolume - 1;
+            this.currentVolume = decreaseVolume;
         }
-        this.currentVolume = newCurrentVolume;
     }
 }
