@@ -42,7 +42,7 @@ public class RadioTest {
 
     @Test
     void shouldAmountStation() {
-        Radio radio = new Radio(16);
+        radio.setAmountRadioStations(16);
         int actual = radio.getAmountRadioStations();
         int expected = 16;
 
@@ -76,6 +76,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
+
     @Test
     void prevMaxRadioStation() {
         radio.setCurrentRadioStation(0);
@@ -100,7 +101,8 @@ public class RadioTest {
 
     @Test
     void nextMaxRadioStation() {
-        radio.setCurrentRadioStation(15);
+        radio.setCurrentRadioStation(8);
+        radio.setMaxRadioStation(8);
         radio.nextRadioStation();
         int actual = radio.getCurrentRadioStation();
         int expected = 0;
