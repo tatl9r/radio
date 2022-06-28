@@ -1,7 +1,7 @@
 public class Radio {
 
 
-    private int maxRadioStation;
+    private int maxRadioStation = 9;
 
     private int minRadioStation;
     private int currentRadioStation;
@@ -9,13 +9,12 @@ public class Radio {
 
     private int amountRadioStations;
 
-
-    public Radio(int amountRadioStations) {
-        this.amountRadioStations = amountRadioStations;
+    public Radio() {
+        maxRadioStation = 9;
     }
 
-    public Radio(){
-        amountRadioStations = 10;
+    public Radio(int amountRadioStations) {
+        maxRadioStation = amountRadioStations - 1;
     }
 
     public int getCurrentRadioStation() {
@@ -38,7 +37,7 @@ public class Radio {
         if (currentRadioStation < 0) {
             return;
         }
-        if (currentRadioStation > 9) {
+        if (currentRadioStation > maxRadioStation) {
             return;
         }
         this.currentRadioStation = currentRadioStation;
